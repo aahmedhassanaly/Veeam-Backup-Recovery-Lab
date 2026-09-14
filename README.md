@@ -17,15 +17,11 @@ The goal is to build practical infrastructure skills, not just follow product tu
 - Recover a full machine to Google Compute Engine.
 - Verify the recovered VM using networking and RDP.
 
-## Architecture
 
 ### Topology
 
-> **Topology image will be added here.**
->
-> Recommended file: `images/veeam-lab-topology.png`
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/039f77f3-2dd6-4316-b1c4-46100d687267" />
 
-![Veeam Lab Topology](images/veeam-lab-topology.png)
 
 ## Environment
 
