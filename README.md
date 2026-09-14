@@ -1,21 +1,21 @@
 # Veeam Backup & Recovery Lab
 
-A practical Veeam Backup & Replication lab built on Google Cloud to simulate backup, recovery, troubleshooting, application-aware processing, backup copy, and disaster recovery workflows.
+A practical Veeam Backup & Replication lab built on Google Cloud. The lab covers backup, recovery, troubleshooting, application-aware processing, backup copy, and disaster recovery.
 
-The lab focuses on hands-on infrastructure skills rather than only following product tutorials.
+The goal is to build practical infrastructure skills, not just follow product tutorials.
 
 ## Lab Objectives
 
-- Deploy a Veeam Backup & Replication environment.
+- Deploy Veeam Backup & Replication.
 - Protect a Windows Server workload with Veeam Agent for Microsoft Windows.
-- Create and manage backup repositories and backup jobs.
+- Configure backup repositories and backup jobs.
 - Verify backup sessions and recovery points.
-- Perform file-level, volume, and full-machine recovery operations.
-- Troubleshoot a failed backup using evidence-based investigation.
+- Perform file-level, volume, and full-machine recovery.
+- Troubleshoot backup failures using evidence.
 - Configure Application-Aware Processing with Windows VSS.
-- Create a secondary backup copy with a Backup Copy Job.
-- Perform a full-machine disaster recovery test to Google Compute Engine.
-- Verify the recovered VM through networking and RDP access.
+- Create a secondary backup copy.
+- Recover a full machine to Google Compute Engine.
+- Verify the recovered VM using networking and RDP.
 
 ## Architecture
 
@@ -48,15 +48,15 @@ The lab focuses on hands-on infrastructure skills rather than only following pro
 
 ### VEEAM01
 
-The Veeam management and backup server running Veeam Backup & Replication.
+The Veeam backup and management server running Veeam Backup & Replication.
 
 ### APP01
 
-The protected Windows Server 2022 workload used for backup and recovery testing.
+The Windows Server 2022 workload protected by Veeam.
 
 ### VEEAM01-Repository
 
-The backup repository used to store the primary backup data and backup copy data in this lab.
+The backup repository used for the primary backup and backup copy in this lab.
 
 ### app01new
 
@@ -64,11 +64,11 @@ A new Google Compute Engine VM created during the disaster recovery test from th
 
 ## Lab Workflow
 
-The lab was completed progressively from infrastructure setup to recovery validation.
+The lab was completed from basic infrastructure setup to full recovery.
 
 ### 1. Google Cloud Environment Setup
 
-Created the required Google Cloud networking and compute environment for the Veeam lab.
+Created the Google Cloud network and compute resources required for the lab.
 
 ### 2. Veeam Installation
 
@@ -76,11 +76,11 @@ Installed and prepared Veeam Backup & Replication on `VEEAM01`.
 
 ### 3. Protected Workload
 
-Prepared `APP01` as the Windows Server 2022 workload to be protected.
+Prepared `APP01` as the Windows Server 2022 workload.
 
 ### 4. Veeam Infrastructure Setup
 
-Configured the Veeam infrastructure and connected the required components.
+Configured the required Veeam infrastructure components.
 
 ### 5. Backup Repository
 
@@ -88,29 +88,29 @@ Created and configured `VEEAM01-Repository` for backup storage.
 
 ### 6. First Backup Job
 
-Created the primary backup job for `APP01` and executed a successful backup.
+Created the primary backup job for `APP01` and completed a successful backup.
 
 ### 7. Analyze, Verify, and Manage Backup
 
-Reviewed backup sessions, restore points, data processing information, and job results.
+Reviewed backup sessions, restore points, data processing, and job results.
 
 ### 8. File-Level Restore
 
-Performed file-level recovery from the backup to verify granular recovery capability.
+Performed file-level recovery from the backup.
 
 ### 9. Volume and Bare-Metal Recovery
 
-Practiced volume-level and bare-metal recovery workflows available from the lab backup set.
+Practiced volume-level and bare-metal recovery workflows using the lab backup.
 
 ### 10. Backup Failure Troubleshooting
 
-Investigated a failed backup scenario using a practical troubleshooting approach based on evidence, hypothesis, testing, fixing, and verification.
+Investigated a failed backup using evidence, hypothesis, testing, fixing, and verification.
 
 ### 11. Application-Aware Backup (VSS)
 
 Enabled Application-Aware Processing for `APP01` and configured VSS processing as **Require successful processing**.
 
-The backup completed successfully with:
+The backup completed successfully:
 
 - Status: `Success`
 - Hosts processed: `1 of 1`
@@ -122,13 +122,13 @@ The backup completed successfully with:
 - Backup size: `110.6 MB`
 - Duration: `2 minutes 45 seconds`
 
-Detailed VSS execution information was not independently visible in the available session report, so the lab does not claim detailed VSS validation. SQL-specific consistency was also not tested because SQL Server was not installed on `APP01`. fileciteturn7file0
+Detailed VSS execution information was not independently visible in the session report, so the lab does not claim detailed VSS validation. SQL-specific consistency was not tested because SQL Server was not installed on `APP01`.
 
 ### 12. Backup Copy / Secondary Backup
 
 Created a Veeam Backup Copy Job named `app01-BackupCopy` using **Immediate Copy (mirroring)**.
 
-The copy used `VEEAM01-Repository` as the target repository with a retention policy of `7 days`.
+The target was `VEEAM01-Repository` with a retention policy of `7 days`.
 
 Verification results:
 
@@ -140,7 +140,7 @@ Verification results:
 - Data transferred: `11.8 GB`
 - Duration: `2 minutes 8 seconds`
 
-This demonstrates a second backup copy workflow, but the primary and secondary copies are still within the same lab infrastructure and should not be considered a fully independent off-site backup design. fileciteturn5file0
+This demonstrates a second backup copy workflow. However, both copies are still inside the same lab infrastructure and are not a fully independent off-site backup design.
 
 ### 13. Disaster Recovery / Full Recovery to GCE
 
@@ -167,24 +167,24 @@ Recovery results:
 
 During validation, RDP initially failed because the recovered VM did not have the required `app01` network tag. After adding the tag required by the existing TCP/3389 firewall rule, RDP access was successfully established.
 
-The original `APP01` VM was not modified during the recovery test. fileciteturn6file0
+The original `APP01` VM was not modified during the recovery test.
 
 ## Troubleshooting Approach
 
-The lab used a structured troubleshooting method:
+The lab used a simple troubleshooting method:
 
 **Problem → Evidence → Hypothesis → Test → Fix → Verify**
 
-Examples encountered during the lab included:
+Examples included:
 
 - Backup and guest-processing troubleshooting.
-- Google Cloud organization policy restrictions affecting external IP access.
+- Google Cloud organization policy restrictions.
 - Service account creation restrictions.
 - VM Migration API and service-agent requirements.
 - Recovery target configuration problems.
 - RDP connectivity caused by a missing firewall target tag.
 
-The goal was not only to make the task work, but to identify the actual cause and verify the fix.
+The goal was to find the real cause, apply the correct fix, and verify the result.
 
 ## Recovery Flow
 
@@ -249,7 +249,7 @@ Backup Copy          Full Machine Restore
 
 ### Troubleshooting
 
-- Reading job/session results
+- Reading job and session results
 - Identifying infrastructure restrictions
 - Testing hypotheses before applying fixes
 - Verifying recovered systems after changes
@@ -279,10 +279,10 @@ Detailed implementation notes are available in the `documentation/` directory.
 This is a practical learning lab, not a complete production backup and disaster recovery architecture.
 
 - The primary and backup-copy data use the same lab infrastructure.
-- The environment does not provide a fully independent off-site backup site.
-- Detailed VSS application consistency was not independently verified from the Veeam session report.
+- There is no fully independent off-site backup site.
+- Detailed VSS application consistency was not independently verified.
 - SQL Server application consistency was not tested.
-- The GCE recovery demonstrates technical recovery capability, but not a complete enterprise DR strategy.
+- The GCE recovery proves technical recovery capability, but it is not a complete enterprise DR strategy.
 
 ## Final Result
 
@@ -290,4 +290,4 @@ The lab demonstrates an end-to-end Veeam backup and recovery workflow:
 
 **Windows Workload → Veeam Backup → Repository → Backup Copy → Recovery → Google Cloud DR**
 
-The project was intentionally stopped after the full recovery objective was completed because additional Veeam tasks in the same environment would add limited learning value compared with building a separate virtualization-focused lab.
+The project was stopped after Task 13 because the main recovery objective was completed. More Veeam tasks in the same environment would add limited learning value compared with building a separate virtualization-focused lab.
