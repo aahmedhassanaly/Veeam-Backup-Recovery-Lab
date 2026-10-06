@@ -60,19 +60,19 @@ Repository
 
 | # | Task | Status |
 |---:|---|:---:|
-| 01 | [Task 1](documentation/01-google-cloud-environment-setup.md) | ✅ |
-| 02 | [Task 2](documentation/02-veeam-installation.md) | ✅ |
-| 03 | [Task 3](documentation/03-app01-workload.md) | ✅ |
-| 04 | [Task 4](documentation/04-veeam-infrastructure-setup.md) | ✅ |
-| 05 | [Task 5](documentation/05-backup-repository.md) | ✅ |
-| 06 | [Task 6](documentation/06-first-backup-job.md) | ✅ |
-| 07 | [Task 7](documentation/07-analyze-verify-manage-backup.md) | ✅ |
-| 08 | [Task 8](documentation/08-file-level-restore.md) | ✅ |
-| 09 | [Task 9](documentation/09-volume-bare-metal-recovery.md) | ✅ |
-| 10 | [Task 10](documentation/10-backup-failure-troubleshooting.md) | ✅ |
-| 11 | [Task 11](documentation/11-application-aware-backup.md) | ✅ |
-| 12 | [Task 12](documentation/12-backup-copy-secondary-backup.md) | ✅ |
-| 13 | [Task 13](documentation/13-disaster-recovery-full-recovery-to-gce.md) | ✅ |
+| 01 | [Google Cloud Environment Setup](documentation/01-google-cloud-environment-setup.md) | ✅ |
+| 02 | [Veeam Backup & Replication Installation](documentation/02-veeam-installation.md) | ✅ |
+| 03 | [Prepare APP01 Workload](documentation/03-app01-workload.md) | ✅ |
+| 04 | [Veeam Infrastructure Setup](documentation/04-veeam-infrastructure-setup.md) | ✅ |
+| 05 | [Backup Repository](documentation/05-backup-repository.md) | ✅ |
+| 06 | [First Backup Job](documentation/06-first-backup-job.md) | ✅ |
+| 07 | [Analyze, Verify & Manage Backup](documentation/07-analyze-verify-manage-backup.md) | ✅ |
+| 08 | [File-Level Restore](documentation/08-file-level-restore.md) | ✅ |
+| 09 | [Volume & Bare-Metal Recovery](documentation/09-volume-bare-metal-recovery.md) | ✅ |
+| 10 | [Backup Failure Troubleshooting](documentation/10-backup-failure-troubleshooting.md) | ✅ |
+| 11 | [Application-Aware Backup](documentation/11-application-aware-backup.md) | ✅ |
+| 12 | [Backup Copy & Secondary Backup](documentation/12-backup-copy-secondary-backup.md) | ✅ |
+| 13 | [Disaster Recovery — Full Recovery to GCE](documentation/13-disaster-recovery-full-recovery-to-gce.md) | ✅ |
 
 Detailed implementation notes: [Documentation](documentation/).
 
