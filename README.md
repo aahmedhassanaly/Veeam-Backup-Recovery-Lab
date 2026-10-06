@@ -19,7 +19,7 @@ A practical **Veeam Backup & Replication** lab built on Google Cloud. The projec
 
 ## Architecture
 
-<img width="1536" height="1024" alt="Veeam backup and recovery topology" src="https://github.com/user-attachments/assets/039f77f3-2dd6-431b-1b4c-46100d687267" />
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/dd7dc658-4fcf-4441-b986-20609660fd04" />
 
 ```text
 APP01
