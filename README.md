@@ -56,19 +56,25 @@ Repository
 | Veeam Version | 13.1.1.18 |
 | Recovery Target | Google Compute Engine |
 
-## Main Workflow
+## Tasks
 
-| Task | Area | Result |
-|---|---|---|
-| 01–05 | Cloud, Veeam, workload, infrastructure, repository | ✅ |
-| 06–07 | Backup and verification | ✅ |
-| 08–09 | File-level, volume, and bare-metal recovery | ✅ |
-| 10 | Backup failure troubleshooting | ✅ |
-| 11 | Application-Aware Processing / VSS | ✅ |
-| 12 | Backup Copy | ✅ |
-| 13 | Full-machine recovery to GCE | ✅ |
+| # | Task | Status |
+|---:|---|:---:|
+| 01 | [Task 1](documentation/01-google-cloud-environment-setup.md) | ✅ |
+| 02 | [Task 2](documentation/02-veeam-installation.md) | ✅ |
+| 03 | [Task 3](documentation/03-app01-workload.md) | ✅ |
+| 04 | [Task 4](documentation/04-veeam-infrastructure-setup.md) | ✅ |
+| 05 | [Task 5](documentation/05-backup-repository.md) | ✅ |
+| 06 | [Task 6](documentation/06-first-backup-job.md) | ✅ |
+| 07 | [Task 7](documentation/07-analyze-verify-manage-backup.md) | ✅ |
+| 08 | [Task 8](documentation/08-file-level-restore.md) | ✅ |
+| 09 | [Task 9](documentation/09-volume-bare-metal-recovery.md) | ✅ |
+| 10 | [Task 10](documentation/10-backup-failure-troubleshooting.md) | ✅ |
+| 11 | [Task 11](documentation/11-application-aware-backup.md) | ✅ |
+| 12 | [Task 12](documentation/12-backup-copy-secondary-backup.md) | ✅ |
+| 13 | [Task 13](documentation/13-disaster-recovery-full-recovery-to-gce.md) | ✅ |
 
-Detailed implementation notes are available in [Documentation](documentation/).
+Detailed implementation notes: [Documentation](documentation/).
 
 ## Key Evidence
 
